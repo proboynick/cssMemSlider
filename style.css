@@ -1,0 +1,182 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+}
+.wrapper {
+    display: flex;
+    height: 100vh;
+    width: 43vw;
+    margin: 0 auto;
+    flex-direction: column;
+    background-color: green;
+}
+
+.wrapper input {
+   display: none;
+}
+
+.slider {
+    gap: 20px;
+    display: flex;
+    width: 90%;
+    height: auto;
+    flex-direction: column;
+    overflow-x: hidden;
+    margin: 100px auto 0;
+}
+
+.slides {
+    width: 500%;
+    display: flex;
+    flex-direction: row;
+}
+
+.slide {
+    display: flex;
+    min-width: 20%;
+    width: 20%;
+    height: auto;
+    overflow-y: hidden;
+    max-height: 600px;
+    transition: 0.5s;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    align-self: center;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 100%;
+    align-items: center;
+}
+
+.mem-titles {
+    display: flex;
+    width: 80%;
+    height: 100%;
+    flex-direction: row;
+    overflow-x: hidden;
+}
+
+.mem-title {
+    display: flex;
+    min-width: 100%;
+    height: 100%;
+    transition: 0.7s;
+}
+
+.labels {
+    display: flex;
+    min-width: 30%;
+    width: 30%;
+    margin: 0 auto;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.bar {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    border: 3px solid rgba(255, 0, 0, 0);
+    border-radius: 15px;
+    background-color: aquamarine;
+}
+
+.bar:hover {
+    background-color: red;
+    opacity: 0.8;
+}
+
+#sl1:checked ~ .slides > .slide1{
+    margin-left: 0%;
+}
+
+#sl2:checked ~ .slides > .slide1{
+    margin-left: -20%;
+}
+
+#sl3:checked ~ .slides > .slide1{
+    margin-left: -40%;
+}
+
+#sl4:checked ~ .slides > .slide1{
+    margin-left: -60%;
+}
+
+#sl5:checked ~ .slides > .slide1{
+    margin-left: -80%;
+}
+
+#sl1:checked ~ .controls > .mem-titles > .t1{
+    margin-left: 0%;
+}
+
+#sl2:checked ~ .controls > .mem-titles > .t1{
+    margin-left: -100%;
+}
+
+#sl3:checked ~ .controls > .mem-titles > .t1{
+    margin-left: -200%;
+}
+
+#sl4:checked ~ .controls > .mem-titles > .t1{
+    margin-left: -300%;
+}
+
+#sl5:checked ~ .controls > .mem-titles > .t1{
+    margin-left: -400%;
+}
+
+#sl1:checked ~ .controls > .labels > label:nth-of-type(1){
+    background: red;
+}
+
+#sl2:checked ~ .controls > .labels > label:nth-of-type(2){
+    background: red;
+}
+
+#sl3:checked ~ .controls > .labels > label:nth-of-type(3){
+    background: red;
+}
+
+#sl4:checked ~ .controls > .labels > label:nth-of-type(4){
+    background: red;
+}
+
+#sl5:checked ~ .controls > .labels > label:nth-of-type(5){
+    background: red;
+}
+
+
+@media (max-width: 1080px) {
+    .wrapper {
+        width: 100%;
+    }
+}
+
+@media (max-width: 680px) {
+.controls {
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mem-title {
+    justify-content: center;
+    text-align: center;
+}
+
+.labels {
+    justify-content: center;
+}
+}
