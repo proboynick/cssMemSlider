@@ -6,6 +6,7 @@
 
 body {
     margin: 0;
+    background-color: rgb(59, 59, 59)
 }
 .wrapper {
     display: flex;
@@ -13,7 +14,6 @@ body {
     width: 43vw;
     margin: 0 auto;
     flex-direction: column;
-    background-color: green;
 }
 
 .wrapper input {
@@ -24,10 +24,10 @@ body {
     gap: 20px;
     display: flex;
     width: 90%;
-    height: auto;
+    height: 100%;
     flex-direction: column;
     overflow-x: hidden;
-    margin: 100px auto 0;
+    margin: 40px auto 0;
 }
 
 .slides {
@@ -50,6 +50,7 @@ body {
     width: 100%;
     height: auto;
     align-self: center;
+    border-radius: 10px;
 }
 
 .controls {
@@ -73,6 +74,10 @@ body {
     min-width: 100%;
     height: 100%;
     transition: 0.7s;
+    color: #fff;
+    padding-left: 5px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
 }
 
 .labels {
@@ -82,20 +87,30 @@ body {
     margin: 0 auto;
     justify-content: flex-end;
     gap: 10px;
+    padding-right: 10px;
 }
 
 .bar {
+    display: block;
     width: 15px;
     height: 15px;
     cursor: pointer;
-    border: 3px solid rgba(255, 0, 0, 0);
+    border: 3px solid rgb(88, 146, 255);
     border-radius: 15px;
-    background-color: aquamarine;
+    background-color: rgba(127, 255, 212, 0);
 }
 
 .bar:hover {
-    background-color: red;
+    background-color: rgb(88, 146, 255);
     opacity: 0.8;
+}
+
+.click-catcher {
+    display: block;
+    width: 25px;
+    height: 25px;
+    margin-top: -8px;
+    margin-left: -7.5px;
 }
 
 #sl1:checked ~ .slides > .slide1{
@@ -139,33 +154,33 @@ body {
 }
 
 #sl1:checked ~ .controls > .labels > label:nth-of-type(1){
-    background: red;
+    background: rgb(88, 146, 255);
 }
 
 #sl2:checked ~ .controls > .labels > label:nth-of-type(2){
-    background: red;
+    background: rgb(88, 146, 255);
 }
 
 #sl3:checked ~ .controls > .labels > label:nth-of-type(3){
-    background: red;
+    background: rgb(88, 146, 255);
 }
 
 #sl4:checked ~ .controls > .labels > label:nth-of-type(4){
-    background: red;
+    background: rgb(88, 146, 255);
 }
 
 #sl5:checked ~ .controls > .labels > label:nth-of-type(5){
-    background: red;
+    background: rgb(88, 146, 255);
 }
 
 
-@media (max-width: 1080px) {
+@media (max-width: 800px) {
     .wrapper {
         width: 100%;
     }
 }
 
-@media (max-width: 680px) {
+@media (max-width: 720px) {
 .controls {
     flex-direction: column;
     gap: 20px;
@@ -174,9 +189,11 @@ body {
 .mem-title {
     justify-content: center;
     text-align: center;
+    padding: 0;
 }
 
 .labels {
     justify-content: center;
+    padding: 0;
 }
 }
