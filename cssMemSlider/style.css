@@ -1,0 +1,215 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    background-color: rgb(59, 59, 59)
+}
+.wrapper {
+    display: flex;
+    height: 100vh;
+    width: 43vw;
+    min-width: 720px;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.wrapper input {
+   display: none;
+}
+
+.slider {
+    display: flex;
+    width: 90%;
+    height: 100%;
+    max-width: 800px;
+    flex-direction: column;
+    overflow-x: hidden;
+    margin: 40px auto 0;
+}
+
+.slides {
+    width: 500%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.slide {
+    display: flex;
+    min-width: 20%;
+    width: 20%;
+    max-width: 720px;
+    height: auto;
+    overflow-y: hidden;
+    max-height: 600px;
+    transition: 0.5s;
+}
+
+.slide img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    align-self: center;
+    border-radius: 10px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+}
+
+.mem-titles {
+    display: flex;
+    max-width: 80%;
+    flex-direction: row;
+    overflow-x: hidden;
+}
+
+.mem-title {
+    display: flex;
+    min-width: 100%;
+    height: 100%;
+    transition: 0.7s;
+    color: #fff;
+    padding-left: 5px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.1rem;
+}
+
+.labels {
+    display: flex;
+    min-width: 135px;
+    width: 30%;
+    margin: 0 auto;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-right: 10px;
+}
+
+.bar {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+    border: 3px solid rgb(88, 146, 255);
+    border-radius: 15px;
+    background-color: rgba(127, 255, 212, 0);
+}
+
+.bar:hover {
+    background-color: rgb(88, 146, 255);
+    opacity: 0.8;
+}
+
+.click-catcher {
+    display: block;
+    width: 25px;
+    height: 25px;
+    margin-top: -8px;
+    margin-left: -7.5px;
+}
+
+#sl1:checked ~ .slides > .slide1{
+    margin-left: 0%;
+}
+
+#sl2:checked ~ .slides > .slide1{
+    margin-left: -20%;
+}
+
+#sl3:checked ~ .slides > .slide1{
+    margin-left: -40%;
+}
+
+#sl4:checked ~ .slides > .slide1{
+    margin-left: -60%;
+}
+
+#sl5:checked ~ .slides > .slide1{
+    margin-left: -80%;
+}
+
+#sl1:checked ~ .controls > .mem-titles > .t1{
+    margin-left: 0%;
+}
+
+#sl2:checked ~ .controls > .mem-titles > .t1{
+    margin-left: -100%;
+}
+
+#sl3:checked ~ .controls > .mem-titles > .t1{
+    margin-left: -200%;
+}
+
+#sl4:checked ~ .controls > .mem-titles > .t1{
+    margin-left: -300%;
+}
+
+#sl5:checked ~ .controls > .mem-titles > .t1{
+    margin-left: -400%;
+}
+
+#sl1:checked ~ .controls > .labels > label:nth-of-type(1){
+    background: rgb(88, 146, 255);
+}
+
+#sl2:checked ~ .controls > .labels > label:nth-of-type(2){
+    background: rgb(88, 146, 255);
+}
+
+#sl3:checked ~ .controls > .labels > label:nth-of-type(3){
+    background: rgb(88, 146, 255);
+}
+
+#sl4:checked ~ .controls > .labels > label:nth-of-type(4){
+    background: rgb(88, 146, 255);
+}
+
+#sl5:checked ~ .controls > .labels > label:nth-of-type(5){
+    background: rgb(88, 146, 255);
+}
+
+@media (max-width: 720px) {
+
+.wrapper {
+    width: 100%;
+    min-width: 0;
+}
+.controls {
+    flex-wrap: wrap-reverse;
+    gap: 20px;
+}
+
+.mem-titles {
+    max-width: 100%;
+}
+
+.mem-title {
+    width: 100%;
+    justify-content: start;
+    text-align: start;
+    padding: 0;
+}
+
+.labels {
+    justify-content: center;
+    padding: 0;
+}
+
+}
+
+@media (max-width: 380px) {
+
+    .mem-title {
+        font-size: 0.8rem;
+    }
+    
+}
